@@ -86,6 +86,7 @@ exports.loginController = async (req, res) => {
 
     //pw match
     const isMatch = await bcrypt.compare(password, user.password);
+    
     if (!isMatch) {
       res.status(401).send({
         success: false,
